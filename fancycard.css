@@ -15,13 +15,52 @@ body{
     align-items: center;
     min-height: 100vh;
     font-family: sans-serif;
+    background: #eee;
+    gap: 2rem;
+}
+
+.circle{
+    width: 50rem;
+    height: 50rem;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle--first{
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right,#3bacb6,30%, #f73d93)
+}
+
+.circle--second{
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, #eb5353,80%,#ffd24c);
 }
 
 .card{
     height: 50rem;
     width: 40rem;
+    box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);
+    border-radius: 0.5rem;
+    position: relative;
+    background: #eee;
 }
 
+.card::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(#eb5353,#ffd24c,#3bacb6,#f73d93);
+    z-index: -1;
+    animation-name: rainbow;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
 
 .card__figure{
     width: 100%;
@@ -32,6 +71,8 @@ body{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
 }
 
 .card__body{
@@ -60,6 +101,7 @@ body{
 
 .card__p{
     font-size: 80%;
+    font-weight: 500;
 }
 
 .card__category--controller{
@@ -74,14 +116,75 @@ body{
     background: #f73093;
 }
 
+.card__category--crypto{
+    background: darkblue;
+}
+
+.card__category--bitcoin{
+    background: orange;
+}
+
+.card__category--etheruem{
+    background: #89CFF0;
+}
+
+.card__category--memecoins{
+    background: green;
+}
+
+.card__category--seasons{
+    background: rebeccapurple;
+}
+
+.card__category--allcoins{
+    background: black;
+}
+
 .card__footer{
     height: 20%;
     width: 100%;
-    background: green;
     display: flex;
+    padding: 2rem;
+    gap: 1rem;
+    align-items: center;
 }
 
-.card__footer img{
-    width: 10%;
-    height: 10%;
+.card__pf{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+}
+
+.card__footer h3{
+    font-size: 90%;
+    font-weight: 300;
+}
+
+.card__footer p{
+    font-size: 70%;
+    font-weight:300;
+
+}
+
+@media screen and (max-width:75rem) {
+    .body{
+        padding: 2rem;
+    }
+    
+    .card{
+        height: auto;
+    }
+    
+    .circle{
+        display: none;
+    }
+}
+
+@keyframes rainbow{
+    from{
+        filter: blur(10rem);
+    }
+    to{
+        filter: blur(0.5rem);
+    }
 }
