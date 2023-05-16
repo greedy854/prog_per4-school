@@ -30,11 +30,18 @@ body {
 }
 
 .profile {
-    width: 40rem;
-    height: 40rem;
+    width: 20rem;
+    height: 20rem;
     background: white;
     border-radius: 5rem;
     box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.2);
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile:hover {
+    cursor: pointer;
 }
 
 .profile__header {
@@ -77,7 +84,8 @@ body {
     position: relative;
 }
 
-.unknown, .known {
+.unknown,
+.known {
     height: 15rem;
     width: 15rem;
     background: #eee;
@@ -103,7 +111,7 @@ body {
 
 .unknown__body {
     width: 80%;
-    height: 80%;
+    height: 50%;
     background: white;
     border-radius: 50%;
     position: absolute;
@@ -112,27 +120,34 @@ body {
     transform: translatex(-50%);
 }
 
-.known__image{
+.known__image {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
 .profile__body {
-    height: 25rem;
+    height: calc(85% - 10rem);
     background: white;
     display: flex;
     align-items: center;
     padding: 2rem;
+    border-bottom-left-radius: 5rem;
+    border-bottom-right-radius: 5rem;
 }
 
 .profile__text {
     margin-top: 2rem;
     font-size: 80%;
+    opacity: 0;
+
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.2s;
 }
 
 .profile__footer {
-    height: 5rem;
+    height: 15%;
     border-bottom-left-radius: 5rem;
     border-bottom-right-radius: 5rem;
     display: flex;
@@ -147,9 +162,14 @@ body {
     border: none;
     position: relative;
     transform: rotate(45deg);
+    opacity: 0;
+
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.2s;
 }
 
-.heart:hover{
+.heart:hover {
     cursor: pointer;
 }
 
@@ -174,3 +194,63 @@ body {
     transform: translateY(-50%);
 }
 
+@media screen and (max-width: 50rem) {
+
+    .profile,
+    .heart,
+    .profile__text {
+        animation-name: "";
+        animation-duration: 0;
+    }
+
+    .profile {
+        height: 40rem;
+        width: 40rem;
+    }
+
+    .profile__text,
+    .heart {
+        opacity: 1;
+    }
+}
+
+@keyframes expand {
+    0% {
+        height: 20rem;
+        width: 20rem;
+    }
+
+    50% {
+        width: 40rem;
+        height: 20rem;
+    }
+
+    100% {
+        height: 40rem;
+        width: 40rem;
+    }
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+
+@keyframes popupheart {
+    from {
+        opacity: 0;
+        transform: translateY(2rem) rotate (45deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0rem) rotate (45deg);
+    }
+}
