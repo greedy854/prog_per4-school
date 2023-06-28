@@ -1,18 +1,32 @@
-const blue = document.getElementById("js--blue");
-const valorant = document.getElementsByClassName("product");
-
-blue.onclick = function () {
-    for (let i = 0; i < valorant.length; i++) {
-        valorant[i].style.display = "none";
+let switches = document.getElementsByClassName("product");
+for(let i = 0; i < switches.length; i++){
+    switches[i].onclick = function(){
+        for(let i = 0; i < switches.length; i++){
+            switches[i].style.display = "none";
+        }
+        switch(this.dataset.switch){
+            case "lightblue":
+                document.getElementById("js--blue").style.display = "grid";
+                break;
+            case "yellow":
+                document.getElementById("js--yellow").style.display = "grid";
+                break;
+            case "gray":
+                document.getElementById("js--gray").style.display = "grid";
+                break;
+            case "pink":
+                document.getElementById("js--pink").style.display = "grid";
+                break; 
+        }
     }
-    document.getElementById("js--blueModal").style.display = "grid";
 }
 
-const closeBlueModal = document.getElementById("js--closeBlue");
-closeBlueModal.onclick = function () {
-    document.getElementById("js--blueModal").style.display = "none";
-    for (let i = 0; i < valorant.length; i++) {
-        valorant[i].style.display = "block";
+let closeButtons = document.getElementsByClassName("productModal__close");
+for(let i = 0; i < closeButtons.length; i++){
+    closeButtons[i].onclick = function(){
+        this.parentNode.style.display = "none";
+        for(let i = 0; i < switches.length; i++){
+            switches[i].style.display = "block";
+        }
+    }
 }
-}
-

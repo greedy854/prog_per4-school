@@ -23,19 +23,19 @@ for(let i = 0; i < filters.length; i++){
 //
 
 //adventure filter
-let adventureFilter = document.getElementById("adventure");
+let DutchFilter = document.getElementById("Dutch coins or banknotes");
 
-adventureFilter.onchange = function(){
-    if(adventureFilter.checked === true){
+DutchFilter.onchange = function(){
+    if(DutchFilter.checked === true){
         for(let i = 0; i < allGames.length; i++){
-            if(allGames[i].dataset.category === "adventure"){
+            if(allGames[i].dataset.category === "Dutch coins or banknotes"){
                 allGames[i].style.display = "block";
             }
         }
     }
     else{
         for(let i = 0; i < allGames.length; i++){
-            if(allGames[i].dataset.category === "adventure"){
+            if(allGames[i].dataset.category === "Dutch coins or banknotes"){
                 allGames[i].style.display = "none";
             }
         }
@@ -43,19 +43,19 @@ adventureFilter.onchange = function(){
 }
 
 //sport filter
-let sportFilter = document.getElementById("sport");
+let BanknotesFilter = document.getElementById("Banknotes");
 
-sportFilter.onchange = function(){
-    if(sportFilter.checked === true){
+BanknotesFilter.onchange = function(){
+    if(BanknotesFilter.checked === true){
         for(let i = 0; i < allGames.length; i++){
-            if(allGames[i].dataset.category === "sport"){
+            if(allGames[i].dataset.category === "Banknotes"){
                 allGames[i].style.display = "block";
             }
         }
     }
     else{
         for(let i = 0; i < allGames.length; i++){
-            if(allGames[i].dataset.category === "sport"){
+            if(allGames[i].dataset.category === "Banknotes"){
                 allGames[i].style.display = "none";
             }
         }
@@ -63,19 +63,19 @@ sportFilter.onchange = function(){
 }
 
 //puzzle filter
-let puzzleFilter = document.getElementById("puzzle");
+let GoldFilter = document.getElementById("Gold");
 
-puzzleFilter.onchange = function(){
-    if(puzzleFilter.checked === true){
+GoldFilter.onchange = function(){
+    if(GoldFilter.checked === true){
         for(let i = 0; i < allGames.length; i++){
-            if(allGames[i].dataset.category === "puzzle"){
+            if(allGames[i].dataset.category === "Gold"){
                 allGames[i].style.display = "block";
             }
         }
     }
     else{
         for(let i = 0; i < allGames.length; i++){
-            if(allGames[i].dataset.category === "puzzle"){
+            if(allGames[i].dataset.category === "Gold"){
                 allGames[i].style.display = "none";
             }
         }
@@ -84,41 +84,22 @@ puzzleFilter.onchange = function(){
 
 
 //shooter filter
-let shooterFilter = document.getElementById("shooter");
+let SilverFilter = document.getElementById("Silver");
 
-shooterFilter.onchange = function(){
-    if(shooterFilter.checked === true){
+SilverFilter.onchange = function(){
+    if(SilverFilter.checked === true){
         for(let i = 0; i < allGames.length; i++){
-            if(allGames[i].dataset.category === "shooter"){
+            if(allGames[i].dataset.category === "Silver"){
                 allGames[i].style.display = "block";
             }
         }
     }
     else{
         for(let i = 0; i < allGames.length; i++){
-            if(allGames[i].dataset.category === "shooter"){
+            if(allGames[i].dataset.category === "Silver"){
                 allGames[i].style.display = "none";
             }
         }
     }
 }
 
-//action filler
-let actionFilter = document.getElementById("action");
-
-actionFilter.onchange = function(){
-    if(actionFilter.checked === true){
-        for(let i = 0; i < allGames.length; i++){
-            if(allGames[i].dataset.category === "action"){
-                allGames[i].style.display = "block";
-            }
-        }
-    }
-    else{
-        for(let i = 0; i < allGames.length; i++){
-            if(allGames[i].dataset.category === "action"){
-                allGames[i].style.display = "none";
-            }
-        }
-    }
-}
